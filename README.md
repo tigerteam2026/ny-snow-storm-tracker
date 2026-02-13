@@ -1,72 +1,54 @@
 # NY Snow Storm Tracker
 
-A comprehensive informational website documenting the January 2026 winter storm that impacted New York City.
+A comprehensive website documenting the historic January 2026 winter storm that impacted New York and the Northeast region.
 
-## Overview
+## About the Storm
 
-This website provides detailed information about the historic snowfall event that hit NYC on January 25-26, 2026.
+From January 23-27, 2026, Winter Storm Fern brought catastrophic snow and ice across nearly 2,000 miles of North America. New York City received 11.4 inches of snow in Central Park - the heaviest snowfall in nearly five years.
 
-### Key Features
+## Website Features
 
-- **Real-time snowfall data** across all five boroughs
-- **Impact analysis** on transportation and infrastructure
-- **City response** and emergency services information
-- **Safety information** and extreme cold warnings
-- **Regional context** of Winter Storm Fern
+- **Storm Overview**: Complete timeline and meteorological details
+- **Impact Analysis**: NYC-specific impacts including transportation disruptions
+- **Snowfall Data**: Regional totals across NY, NJ, PA, and Canada
+- **Emergency Response**: Government actions and snow removal operations
+- **Aftermath & Recovery**: Death toll, economic impact, and recovery timeline
+- **Responsive Design**: Fully mobile-friendly layout
+- **Modern UI**: Clean, professional design with winter theme
 
-## Snowfall Statistics
+## Key Statistics
 
-- **11.4 inches** in Central Park (daily record since 2022)
-- **15 inches** in Washington Heights (Manhattan)
-- **10-14 inches** across Staten Island
-- **10+ inches** at both JFK and LaGuardia airports
+- 11.4" snow in Central Park, Manhattan
+- 42+ deaths nationwide
+- 11,000+ flights canceled on peak day
+- $4 billion+ in damages
+- Nearly 2 dozen states declared emergencies
 
-## Storm Impact
+## How to Use
 
-- 13+ weather-related deaths
-- 15,000 MTA workers deployed
-- LaGuardia Airport: 90%+ flight cancellations
-- 500,000 NYC students learning remotely
-- Extreme cold warnings with wind chills to -9°F
+1. Open `index.html` in any modern web browser
+2. Navigate using the sticky navigation menu
+3. Responsive design works on desktop, tablet, and mobile
 
-## Technologies Used
+## Files
 
-- HTML5
-- CSS3 with responsive grid layout
-- Modern gradient designs
-- Interactive card components
-- Mobile-responsive design
-
-## Viewing the Site
-
-Simply open `index.html` in any web browser or visit the GitHub Pages site at:
-**https://tigerteam2026.github.io/ny-snow-storm-tracker**
-
-## Setup GitHub Pages
-
-1. Go to repository **Settings**
-2. Navigate to **Pages** section
-3. Under **Source**, select **main** branch
-4. Click **Save**
-5. Your site will be live in a few minutes
-
-## Project Structure
-
-```
-ny-snow-storm-tracker/
-├── index.html          # Main website file with embedded CSS
-└── README.md          # This file
-```
+- `index.html` - Main website content
+- `style.css` - Styling and responsive design
+- `README.md` - This file
 
 ## Data Sources
 
-Information compiled from official sources including:
-- NYC Emergency Management
+Information compiled from:
+- NYC Office of Emergency Management
+- Department of Sanitation (DSNY)
+- Metropolitan Transportation Authority (MTA)
 - National Weather Service
-- NYC Department of Sanitation
-- MTA
 - Major news outlets
+
+## Last Updated
+
+February 13, 2026
 
 ---
 
-*Last Updated: February 2026*
+*Website created to document and preserve information about this historic winter weather event.*
