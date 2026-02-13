@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYC Snowstorm 2026 - Winter Storm Alert</title>
+    <title>NYC January 2026 Snowstorm</title>
     <style>
         * {
             margin: 0;
@@ -13,9 +13,10 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
             line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
 
         .container {
@@ -25,108 +26,127 @@
         }
 
         header {
+            text-align: center;
+            padding: 40px 20px;
             background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
             border-radius: 15px;
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            text-align: center;
         }
 
         h1 {
-            color: #2c3e50;
             font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #555;
+            font-style: italic;
+        }
+
+        .snow-icon {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
             margin-bottom: 10px;
         }
 
-        .alert-banner {
-            background: #e74c3c;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .info-card h2 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .info-card ul {
-            list-style-position: inside;
-            margin-left: 10px;
-        }
-
-        .info-card li {
-            margin-bottom: 8px;
-        }
-
-        .snowfall-icon {
-            font-size: 3em;
-            text-align: center;
-            margin: 10px 0;
-        }
-
-        .stats {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .stat-row:last-child {
-            border-bottom: none;
-        }
-
         .stat-label {
-            font-weight: bold;
-            color: #555;
+            font-size: 0.9em;
+            opacity: 0.9;
         }
 
-        .stat-value {
-            color: #667eea;
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+
+        .date {
             font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .impacts {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .impacts li {
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .impacts li:before {
+            content: "❄️";
+            position: absolute;
+            left: -20px;
         }
 
         footer {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 12px;
             text-align: center;
-            color: #666;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
-            .info-grid {
+            .stats-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -135,81 +155,93 @@
 <body>
     <div class="container">
         <header>
-            <div class="snowfall-icon">❄️</div>
-            <h1>NYC Snowstorm 2026</h1>
-            <p style="font-size: 1.2em; color: #666;">Major Winter Storm Impacts New York City</p>
+            <div class="snow-icon">❄️</div>
+            <h1>NYC January 2026 Snowstorm</h1>
+            <p class="subtitle">The Biggest Snowfall in Nearly Five Years</p>
         </header>
 
-        <div class="alert-banner">
-            ⚠️ WINTER STORM WARNING IN EFFECT - Stay Safe and Informed
+        <div class="content-section">
+            <h2>Overview</h2>
+            <p>
+                From January 23-27, 2026, a massive winter storm system, unofficially named "Winter Storm Fern," 
+                swept across North America, bringing heavy snow and dangerous conditions to New York City. 
+                The storm delivered the city's heaviest snowfall since 2022, with some neighborhoods receiving 
+                up to 15 inches of snow.
+            </p>
         </div>
 
-        <div class="stats">
-            <h2 style="color: #667eea; margin-bottom: 20px;">Current Storm Statistics</h2>
-            <div class="stat-row">
-                <span class="stat-label">Expected Snowfall:</span>
-                <span class="stat-value">12-18 inches</span>
-            </div>
-            <div class="stat-row">
-                <span class="stat-label">Temperature:</span>
-                <span class="stat-value">28°F (-2°C)</span>
-            </div>
-            <div class="stat-row">
-                <span class="stat-label">Wind Speed:</span>
-                <span class="stat-value">25-35 mph</span>
-            </div>
-            <div class="stat-row">
-                <span class="stat-label">Visibility:</span>
-                <span class="stat-value">Less than 1/4 mile</span>
+        <div class="content-section">
+            <h2>Snow Totals</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">11.4"</span>
+                    <span class="stat-label">Central Park (Record for Jan 25)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15"</span>
+                    <span class="stat-label">Washington Heights</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10.3"</span>
+                    <span class="stat-label">JFK Airport</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10+"</span>
+                    <span class="stat-label">LaGuardia Airport</span>
+                </div>
             </div>
         </div>
 
-        <div class="info-grid">
-            <div class="info-card">
-                <h2>🚗 Travel Updates</h2>
-                <ul>
-                    <li>Major highways experiencing delays</li>
-                    <li>Public transit on modified schedule</li>
-                    <li>Flight cancellations at JFK and LaGuardia</li>
-                    <li>Avoid non-essential travel</li>
-                </ul>
+        <div class="content-section">
+            <h2>Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">January 25, 2026 - 1:00 AM</div>
+                    <p>NYC Department of Sanitation issues Snow Alert. Storm preparation begins with brining operations.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">January 25, 2026 - 5:00 AM</div>
+                    <p>Snow begins falling across the New York metropolitan area.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">January 25, 2026 - 12:00 PM</div>
+                    <p>Citi Bike service shuts down due to hazardous conditions. LaGuardia Airport closes.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">January 26, 2026 - 8:30 AM</div>
+                    <p>Official end of precipitation. City begins cleanup and recovery operations.</p>
+                </div>
             </div>
+        </div>
 
-            <div class="info-card">
-                <h2>🏠 Safety Tips</h2>
-                <ul>
-                    <li>Stay indoors when possible</li>
-                    <li>Stock up on food and water</li>
-                    <li>Charge all electronic devices</li>
-                    <li>Check on elderly neighbors</li>
-                    <li>Keep emergency supplies ready</li>
-                </ul>
-            </div>
+        <div class="content-section">
+            <h2>Impact on the City</h2>
+            <ul class="impacts">
+                <li><strong>Transportation:</strong> Hundreds of flights canceled at JFK, LaGuardia, and Newark. MTA operated on reduced schedules with some express trains running locally.</li>
+                <li><strong>Schools:</strong> Over 400,000 NYC public school students learned remotely on January 26th.</li>
+                <li><strong>Emergency Response:</strong> Code Blue protocols activated to protect homeless New Yorkers. Warming centers opened in all five boroughs.</li>
+                <li><strong>Snow Removal:</strong> 15,000 MTA workers and DSNY crews deployed the largest headcount in years for snow removal operations.</li>
+                <li><strong>Casualties:</strong> Tragically, several weather-related deaths occurred, including individuals experiencing homelessness and a retired NYPD officer who suffered a heart attack while shoveling snow.</li>
+            </ul>
+        </div>
 
-            <div class="info-card">
-                <h2>📅 Timeline</h2>
-                <ul>
-                    <li><strong>Now:</strong> Heavy snowfall ongoing</li>
-                    <li><strong>Tonight:</strong> Storm intensifies</li>
-                    <li><strong>Tomorrow:</strong> Gradual improvement</li>
-                    <li><strong>Wed:</strong> Cleanup operations begin</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h2>ℹ️ Resources</h2>
-                <ul>
-                    <li>Call 311 for city services</li>
-                    <li>911 for emergencies only</li>
-                    <li>Check NYC.gov for updates</li>
-                    <li>Monitor local news stations</li>
-                </ul>
-            </div>
+        <div class="content-section">
+            <h2>City Response</h2>
+            <p>
+                Mayor Zohran Mamdani praised city workers for their preparation and response to what was 
+                his administration's first major snowstorm. The Department of Sanitation deployed one of 
+                its largest crews ever, with workers pre-treating streets with brine and operating around 
+                the clock to keep roads passable.
+            </p>
+            <p style="margin-top: 15px;">
+                "We prepared for this storm together, and we rode this storm out together," Mayor Mamdani 
+                stated. "While the worst is behind us, there is still more to be done as we clear the snow 
+                and restore our city."
+            </p>
         </div>
 
         <footer>
-            <p>Last Updated: February 10, 2026 | Stay safe, New York! ❄️</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">For official updates, visit NYC Emergency Management</p>
+            <p>Information compiled from news sources • January 2026</p>
         </footer>
     </div>
 </body>
